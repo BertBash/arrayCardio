@@ -32,26 +32,28 @@ console.log(totalPay(dogWalks));
 
 //Even or Odd
 function evenOrOdd(arr){
-    var odds = [];
-    var evens = [];
+    var odds = 0;
+    var evens = 0;
     i = 0;
 
     //While loop is a little more efficent here than a for loop.
-    while(odds.length < 1 || evens.length < 1){
+    while(odds < 1 || evens < 1){
         //Bitwise > Modulo
         if(arr[i] & 1){
-            odds.push(arr[i]);
+            odds++;
         }else{
-            evens.push(arr[i]);
+            evens++;
         }
         i++;
     }
 
+    i--;
+
     //Really abusing the fact that we're guaranteed only one odd number out here.
-    if(odds.length == 1){
-        return odds[0];
+    if(odds == 1){
+        return arr[i];
     }else{
-        return evens[0];
+        return arr[i];
     }
 }
 
@@ -60,6 +62,7 @@ console.log(evenOrOdd([10, 15, 20, 30, 40, 50]))
 console.log(evenOrOdd([19, 5, 42, 1, 77]))
 
 //Make Some Space
+console.log("Program Completed! Shutting down now!");
 console.log("Program Completed! Shutting down now!");
 console.log("Program Completed! Shutting down now!");
 console.log("Program Completed! Shutting down now!");
